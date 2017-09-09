@@ -1,0 +1,279 @@
+
+
+\section{Expert behaviour}
+\label{xbehaviour}
+
+An expert in a task domain can think effectively about problems in that
+domain. It is not only the general abilities such as memory and
+intelligence or talent that lead to expertise, rather extensive practice
+and exploration of the task domain are the more important factors
+\citep{ericsson02}. The knowledge acquired during the exploration of the
+problem domain enables the expert to perceive and understand the same
+problem in a more effective way than a novice.
+
+Although a novice and an expert may possess the same amount of relevant
+knowledge in terms of facts and formulae, the superior abilities of experts
+arise from the organization of the knowledge that happens as a result of
+experience. Experts are able to retrieve important aspects of their
+knowledge with little attention or effort. Their knowledge isn't just a
+collection of facts and propositions, instead it reflects the context of
+applicability, that is, knowledge is ``conditionalized'' on a set of
+circumstances \citep{glaser99, bransford00}. For example an expert chess
+player is able to recall meaningful board positions much more accurately
+than average players, while recall ability for random board positions are
+similar for both experts and non-experts \citep{degroot65, chase73}. These
+evidences suggest that with experience and practice, people cognitively
+chunk the available information in their task domain into larger units
+based on their functional characteristics. The evidence for knowledge
+chunking in experts has been observed in many fields, e.g. in the game of
+bridge \citep{engle78}, in electronic circuitry \citep{egan79} and computer
+programming \citep{ehrlich1984}.
+
+A key aspect in chunking is abstraction. An expert is able to conceptualize
+the most {\em important} principles pertinent to solution to a problem and
+ignore the rest.  Chunks are formed based on the functional relation of the
+individual elements, ignoring other less important issues. For example in
+chess, given a valid board position, expert players are more likely to
+recall only a set of ``good'' moves for the position, out of a very large
+number of possible moves.
+
+
+Although design problems are different from problems in other domains
+\citep{schon88, goel92}, expert designers too rely on their experiential
+knowledge to guide the design process. The experience helps the designers
+to {\em frame} the problem and arrive at a principal solution early on, and
+identify the aspects of the design problem that need attention. Later
+they are able to change the early solution rather fluently and easily as
+difficulties are encountered.
+
+\subsection{A real design situation}
+\label{expertInAction}
+In this work, we are considering four design problems. For one of these,
+the brush-less DC permanent magnate motor (BDCPMM) design problem, we were
+able to talk to Dr. S. P. Das who has expertise in brush-less DC motors. The
+problem is to design custom motors using off-the-shelf standard parts. The
+two objectives of the design are to minimize the production cost and to
+maximize the peak torque. The expression for torque produced in a BDCPMM is
+\begin{align}
+T_p = 87300 C_{tor} N R_{si} A_{wire} n_{l} 
+\end{align}
+where $C_{tor}$ is either $\frac{1}{3}$ or $\frac{2}{3}$ for $Y$ connection
+and $\Delta$ connection respectively, $N$ is the number of laminations in
+the stator, $R_{si}$ is the inner radius of the stator, $A_{wire}$ is the
+cross-sectional area of the wire used in the stator winding and $n_l$ is
+the number of turns in the stator coil.  For low cost motors, he said that
+without any other constraints, designs with smaller radial dimensions and
+thin wires for winding would be cost effective. For high end motors,
+however, a design with larger radial dimensions would be better in terms of
+cost, though the choice of wire for winding would require investigation.
+In both the cases similar designs would tend to vary considerably in the
+number of laminations in the stator. On the question of the connection
+type for the windings he could immediately choose the $\Delta$ connection,
+though the reasons for this choice were not so clear. We were surprised to
+note that each of these observations directly follow from our results and
+are discussed in section \ref{bdcpmDiscuss}.
+
+
+% When the problem of designing a
+% motor with a torque specification was presented to an expert, he said that
+% without any other constraints, designs with laminations with smallest
+% radial dimenions and thin wires for winding would be cost effective for low
+% torque motors. For high end motors, however, a design with laminations with
+% larger radial dimensions would be better in terms of cost, though the
+% choice of wire for winding would require investigation.
+
+
+\section{Modelling the chunking behaviour}
+The endeavour to computationally model the human learning behaviour dates
+back several decades. First attempts at modelling the chunking behaviour
+such as the EPAM or CHREST \citep{feigen61, gobet93} tried pure and direct
+implementation of chunking mechanisms based on discrimination networks. An
+alternative approach employed in systems such as the Soar and ACT-R
+\citep{anderson96} relies on a production-rule based representation of the
+information. A further alternative is presented by non-symbolic
+computational models \citep{elman05}, which propose that information should
+be distributed across multiple units, and no units should be dedicated to
+specific functions.
+
+In the past automated design systems such as CADET \citep{sycara91} and
+ARCHIE-II \citep{domeshek91} have focused on using the knowledge stored as
+cases in new design problems, however they are limited in their ability to
+incorporate new knowledge from design experience into their knowledge
+base. Attempts to incorporate knowledge transfer in search oriented design
+systems have bean made \citep{moss04}, however the learning is in terms of
+concrete design components, and carries no knowledge of the context of
+application. A methodology for automatically extracting innovative implicit
+principles of optimal design from multi-objective optimization has been
+proposed in \citep{deb10}. In \citep{mukerjee09} it is argued that human
+flexibility in symbol usage is possible because they are grounded on
+experience and any attempt at concrete definition will miss many of the
+associations the symbol has. This work is based on this view, and we
+propose the {\em chunk dimensionality conjecture} in the next section and
+present the results of empirical work on this conjecture in the next few
+chapters.
+
+\section{Chunk dimensionality conjecture}
+\label{cdc}
+
+In many cases it has been observed that the dimensionality of the optimal
+solution set manifold in the decision space is the same as its
+dimensionality in the objective space \citep{mukerjee09}. In this work we
+have tested five multi-objective optimization tasks and found that the
+pareto-front for these problems could be divided into clusters, most of
+which had manifold dimensionality comparable to the number of
+objectives. This evidence led us to propose the following conjecture, which
+we will not attempt to prove in this thesis since the constraints that the
+conjecture imposes are not met by most practical multi-objective
+optimization situations, but we will present the empirical evidence that
+substantiate this conjecture.
+
+
+\begin{conjecture}[Chunk dimensionality conjecture]\label{cdconjecture}
+  Given a multi-objective optimization problem with a decision variable $x
+  \in \Sigma$, where $\Sigma$ is the decision space,
+
+% For
+%   $d$-objective multi-objective optimization problem with a $D$ dimensional
+%   decision space,
+
+  \begin{enumerate}[(a)]
+    \item chunks emerge from a high-dimensional decision space
+      $\mathbb{R}^{D}$ as clusters among the better performing combinations,
+    \item chunks reflect a lower dimensionality than the embedding space,
+      i.e.  chunks are manifolds of dimension $d_{c}$, $d_{c} < D$,
+    \item for multi-objective decision problems with $d+1$ objectives ($d
+      \ll D$), the better performing combinations are to be found on the
+      non-dominated (pareto) frontier which is a $d$-dimensional manifold
+      in the objective space, and
+    \item if the objective function that maps the decision space to the
+      objective space is continuous and well-behaved, this would result in
+      chunks that have a dimensionality $d_{c} = \textbf{o}(d)$,
+      i.e. $d_{c} = kd$, where $k-1$ is vanishingly small.
+  \end{enumerate}
+\end{conjecture}
+
+Claims a, b, and c of the conjecture are fairly well accepted, d requires
+further comment. An objective function $f$ is a mapping from decision space
+to objective space. Let $\Phi \subset \mathbb{R}^{d+1}$ be the objective
+space then assuming $\Sigma$ and $\Phi$ are metric spaces, an objective function $f$ is a the mapping: \\
+$f: \Sigma \mapsto \Phi$ \\
+The vector function $f$ is continuous if and only if each component
+(scalar) function is continuous. A component function $g$ of $f$ is
+continuous iff:\\
+$\forall x, x' \in \Sigma$ and $\forall \epsilon \in \mathbb{R}_{\geqslant 0}$, ;\\
+$\exists \delta \in \mathbb{R}_{\geqslant 0}$ , such that \\
+$|x - x'| < \delta \Rightarrow |g(x) - g(x')| < \epsilon$\\
+i.e. two neighboring points $x$ and $x'$ in the decision space will map to
+$y$ and $y'$ in the objective space, which are also {\em near} in the
+objective space. Local neighborhood in the objective space may reflect
+either a local neighborhood in the decision space, or a combination of such
+neighborhoods. By well behaved we imply that the function does not
+oscillate very wildly or exhibit other such undesirable behaviour.
+
+In some optimization tasks, the objective mapping function is extremely ill
+posed and such constraints may not hold. However in many common
+optimization tasks, the objective functions are quite well behaved. Table
+\ref{expSummary} shows that results from practical multi-objective
+optimization support the conjecture. In most cases at most some of the 
+decision variables are continuous. Despite this, we can observe that for
+all the problems most of the clusters have a dimensionality $d_c = d$.
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{Design problem} & \multirow{2}{*}{$D$} & \multirow{2}{*}{Cont. variables} & \multirow{2}{*}{$d+1$}  & \multicolumn{2}{c|}{Cluster dimensionality} \\
+    \cline{5-6} 
+    &&&&Dimensionality & No. of clusters \\
+    \hline
+    \multirow{2}{*}{BDCPM design} & \multirow{2}{*}{5} & \multirow{2}{*}{0} & \multirow{2}{*}{2} & 1 & 4 \\
+    \cline{5-6} 
+    &&&&2 & 1 \\
+    \hline
+    Gearbox design (A) & 11 &10 & 2 & 1 & 11 \\
+    \hline
+    Gearbox design (B) & 29 & 10 & 3 & 2 & 7 \\
+    \hline
+    Clutch brake design & 5 & 0 & 2 & 1 & 5 \\
+    \hline
+    Welded beam design & 4 & 4 & 2 & 1 & 5 \\
+
+    % &&& 2 & 1\\
+    \hline
+    % \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{C}}} & 0.435 & 0.897 & -0.066 & -0.003 \\ \cline{2-5}
+    % \multicolumn{1}{|c|}{}& 0 & 0.006 & 0.04 & 0.999\\
+    % \hline
+  \end{tabular}
+  \caption{Summary of experiments.}
+  \label{expSummary}
+\end{table}
+
+
+\section{Dimensionality reduction}
+A variety of dimensionality reduction techniques are employed to find low
+dimensional structures \citep{mph07}. Linear dimensionality reduction
+techniques assume a linear relationship among the points in the data and
+try to find a low dimensional embedding for the data-set, while non-linear
+dimensionality reduction techniques assume that the points in the data-set
+lie along a manifold in the high dimensional space and try to find a low
+dimensional embedding for this manifold. For non-linear data-sets, the
+linear algorithms map smallest convex subspaces encapsulating the manifold,
+often of much higher dimension than the manifold itself. On the other hand,
+non-linear techniques embed the data-set in the manifold dimensions, whose
+relation to the original input dimensions may be difficult to unravel.
+
+Principal component analysis (PCA) \citep{hotelling33, jolliffe02}is by far
+the most popular unsupervised linear dimensionality reduction technique.
+PCA constructs a low dimensional representation of the data that describes
+as much of the variance in the data as possible. This is done by finding a
+linear basis of reduced dimensionality for the data using singular value
+decomposition techniques, in which the amount of variance in the data is
+maximal. The amount of variance along a reduced dimension is its {\em
+  explained variance}. We use PCA to uncover the implicit common principles
+that the designs in a chunk share, and to obtain a low dimensional
+representations of the chunks.
+
+Nonlinear dimensionality reduction techniques fall in one of two
+categories: (1) techniques that attempt to preserve the local properties of
+the original data in the reduced dimensionality representation, and, (2)
+techniques that aim to preserve the global properties of the data in the
+low-dimensional representation. {\em Locally linear embedding} (LLE)
+\citep{saul03} is a major representative of local techniques. LLE models
+the manifold as a collection of linear patches and attempts to characterize
+the geometry of these linear patches. To do so it attempts to represent
+each point $x_i$ as a weighted, convex combination of its $k$ nearest
+neighbors. A $d$ dimensional configuration is then found whose local
+geometry is characterized well the weight matrix obtained earlier. LLE has
+been used in \citep{mukerjee09} to obtain a low dimensional representation
+for chunks of {\em good} designs.
+
+Isometric feature mapping or Isomap \citep{tsl05} is a global technique for
+manifold learning that first captures the intrinsic geometry of the data in
+geodesic manifold distances between all pairs of data. Geodesic distances
+are estimated by first constructing a nearest neighbor graph in which their
+is an edge between every point and it's $k$ nearest neighbors or points
+within $\epsilon$ radius. The geodesic distance between two points is then
+assumed to be the shortest path distance between them in the graph so
+constructed. The manifold distance matrix is then used to obtain distance
+preserving low dimensional representation for the data using
+multi-dimensional scaling. The error introduced in reverse-mapping an
+Isomap embedding back to the original space is known as the residual
+error. Comparing the residual error for Isomap embedding of different
+dimensions gives a way of estimating the manifold dimensionality of the
+input data \citep{martin05}. We use Isomap to estimate the dimensionality
+of the chunk manifolds by comparing the residual variance for embeddings of
+different dimension.
+
+% \section{Experiments}
+% In this work, we explore some well known design problems with respect to
+% the {\em Chunk dimensionality conjecture}. Chapter 2 presents our method of
+% extracting and analysing chunks of good design for a multi-objective
+% optimization problem, accompanied by its application to the BDCPMM design
+% problem introduced in \ref{xbehaviour}. For this problem the design
+% implications for the obtained chunks and their corresponence to an expert
+% designers intuition are also dicussed. Chapter 3 presents the analysis of
+% the well known gearbox design problem \citep{agogino90}. In chapter 4 we
+% analyse two small design problems, the clutch brake design and the welded
+% beam design problem. The clutch brake design problem is a dicrete
+% optimization problem and the welded beam design problem has a continuous
+% decision space.

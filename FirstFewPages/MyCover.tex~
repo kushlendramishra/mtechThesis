@@ -1,0 +1,30 @@
+\titlepage
+\begin{center}
+\noindent {\bf{\Large{\sc Using Contextual Proximity for Improved Search in Text Documents}}}\\
+%\vspace{4mm}
+%\noindent {\bf{\Large{\sc Environment based on Parallel Patterns}}}\\
+\end{center}
+\vspace{50mm}
+\begin{center}
+{\it by}\\
+\vspace{5mm}
+{\bf{\Large Tushar Kashalikar}}\\
+\end{center}
+\vspace{45mm}
+%\begin{figure}[h]
+%\centering
+\begin{center}
+\includegraphics[width=0.25\textwidth]{diagrams/iitklogo}
+\end{center}
+%\caption{}
+%\end{figure}
+\begin{center}
+\vspace{3mm}
+{\bf {\large {\sc Department of Computer Science and Engineering}}}\\
+\vspace{2mm}
+{\bf {\large INDIAN INSTITUTE OF TECHNOLOGY KANPUR}}\\
+\vspace{3mm}
+{\textbf{ May, 2010}}\\
+\end{center}
+
+

@@ -1,0 +1,69 @@
+
+
+We have proposed a clustering and dimensionality reduction approach to
+chunking in design tasks. A multi-objective optimization procedure is used
+to first obtain a set of good designs, then clustering on the combined
+objective-decision variable space is used to group the designs according to
+their functional characteristics. Linear and non-linear dimensionality
+reduction techniques are used to bring out the design implications of these
+clusters and capture their semantics. We have applied this procedure to a
+number of practical objective optimization problems and shown that majority
+of the clusters obtained are one dimensional. In the examples considered
+pareto frontiers that are two or higher dimensional manifolds, the
+clustering neatly separated the higher dimensional patches of the manifold
+into separate clusters.
+
+This procedure could not only be used to learn design symbols in the
+cognitive sense as discussed in \citep{mukerjee09}, but also to specialize
+them further. For example, in BDCPMM design cluster \textbf{A} and
+\textbf{B} would correspond to what the expert designer calls ``low end
+designs'' (section \ref{bdcpmDiscuss}) and the cluster \textbf{C} to ``high
+end designs''. This would provide a richer initial vocabulary to the system
+with some interrelations among symbols already established.
+
+The analysis of any decision task involves moving through several layers of
+complexity. This suggests how a system can enrich already learnt symbols
+through experience. Initially, the system could be presented with a minimal
+multi-objective formulation (two objectives) of a design task. When the
+system has learnt some initial symbols, a more detailed formulation with
+possibly more objectives and a larger number of decision variables could be
+presented to the system to gain ``experience''. The initial minimal
+formulation would help establish the most pertinent principles, and the
+gradual increase in complexity of the design task would help to bring out
+the subtle and implicit relationships among the chunks. For example in the
+gearbox design problem, the analysis of the fixed layout version of the
+problem established the fact that thickness of the gear pairs in the last
+transmission stage should go higher in accordance with the higher power
+requirements, and the analysis of the complete problem brought to the front
+some ideal combinations for no. of teeth in the final transmission
+stage. However, the specification of the minimal initial formulation, and
+the appropriate increase in complexity after each learning stage would
+depend on the design task at hand.
+
+We have shown the application the procedure to problems in design domain,
+but such an approach to chunking is possible in any domain where the task
+can be expressed as a multi-objective optimization. For example, in robot
+path planning \citep{vadakkepat02}, many potential field functions are
+optimized to calculate the optimal path for the robot. However,
+optimization algorithms are complex and time consuming hence not suited for
+real time application, but if a robot were to learn from the optimizations
+as it calculates the optimal navigation path for a given situation, it
+could use the readily available learnt information when faced with a
+similar scenario next time. With increasing experience, such a system may
+be able to learn chunks such as ``door'', ``connecting passage'',
+``detours'' as components of high-level abstraction for important tasks.
+
+Finally we return to the {\em chunk dimensionality conjecture}. In the five
+examples considered the dimension of the chunk manifold is comparable to
+the number of objectives. However as empirical validation, the sample set
+is very small and clearly much work needs to be done to come up with a
+theoretical basis for the conjecture.
+
+Clearly the ramifications of such a conjecture are very high, especially in
+the attempt to create machine models of expert behaviour. In this thesis we
+have presented evidence that suggests that for many practical problems such
+a conjecture may hold. This work may thus open the door for much greater
+testing and validation in order to identify precisely the problem domains
+where it may apply.
+
+

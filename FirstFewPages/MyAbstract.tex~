@@ -1,0 +1,50 @@
+\begin{center}
+\begin{large}
+{\it{\bf ABSTRACT}}
+\end{large}
+\end{center} 
+
+
+
+For problems in their domain of expertise, human experts are known to
+arrive at a few good solutions immediately without exhaustive search. It is
+believed that such expertise depends on the learning of optimal chunks that
+emerge during the routine exploration of the problem space, constituting a
+dimensionally reducing representation for the task domain. Acquiring such
+expertise in a task domain is based on discovering functional
+interrelations among parameters in a decision space. In most situations,
+function is captured through multiple performance objectives, as a result
+of which no single optimum may exist.
+
+
+
+% Any agent operating in a task domain is expected to acquire some expertise
+% in executing repetitive tasks in the domain.  This process of acquiring
+% expertise is based on discovering functional interrelations among
+% parameters in the decision space.  In this process {\em function} is
+% captured through the idea of multiple performance objectives, as a result
+% of which no single optimum may exist.  Nonetheless, human experts are known
+% to arrive at a few good solutions immediately without exhaustive search,
+% while computational algorithms for multi-objective optimization are based
+% on search.  It is believed that such expertise depends on the learning of
+% optimal ¡®chunks¡¯ that emerge during the routine exploration of the problem
+% space, constituting a dimensionality reducing representation for the task
+% domain.
+
+In this work, we propose that the chunks arise as dimensionality-reducing
+structures that reflect clusters in the pareto front.  We propose a {\em
+  Chunk Dimensionality Conjecture}, by which for well-posed objective
+functions, the dimensionality of the chunk may be of the order of the
+number of objective functions.  We present some empirical studies on this
+conjecture through the analysis of several well-known problems in
+multi-objective design. We extend the work done in \citep{mukerjee09} to
+problems whose pareto-front is not a single continuous manifold, but may
+consist of several separate manifolds corresponding to clusters over the
+non-dominated space. For this purpose, we develop a variant of DBSCAN that
+obtains clusters on the non-dominated solutions obtained from
+multi-objective optimization, and illustrate the process of learning chunks
+as low-dimensional manifolds for each cluster.  The design ramifications of
+these chunks are also highlighted for a electromechanical design problem.
+ 
+\vskip 4mm
+

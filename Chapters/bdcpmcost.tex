@@ -1,0 +1,104 @@
+
+\documentclass[notitlepage]{article}
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\usepackage[left=3cm,top=3cm,right=3cm,bottom=3cm,nohead,nofoot]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage[super]{natbib}
+\begin{document}
+
+\setlength{\textwidth}{24cm}
+
+\bibpunct{[}{]}{,}{}{:}
+
+\title{BDCPM Cost Objective}
+
+\maketitle
+
+\section{Cost Objective}
+Minimize 
+
+\begin{eqnarray*}
+\lefteqn{ C_{total} \left(n_{l}, N, L_{type}, M_{ph}, A_{wire} \right) = } \\
+& & \begin{cases}
+\quad 2.6(\frac{n_{l}}{44})^{0.25}, \text{for $L_{type} =$ X} \\
+\end{cases} \\
+
+\end{eqnarray*}
+\end{document}
+
+
+%\quad 0.38 + 2.42(\frac{n_{l}}{44})^{0.37}, & \text{for $L_{type} =$ Y} \\
+%\quad 1.07 + 1.83(\frac{n_{l}}{44})^{0.58}, & \text{for $L_{type} =$ Z} 
+
+%\, + \, [ \left\{0.026, 0.028, 0.03\right\}n_{l} \cong L_{type} = \textbf{\{X, Y, Z\}} \, + \, \dfrac{n_{l}}{44}$
+%\\ 
+%$
+%\, + \,   9.8 \times 10^{5} A_{wire} N [ 5.8  \times  10^{-4} n_{l}
+%$
+%\\
+%$
+  %\left. \quad \right. \, + \, \dfrac{\pi}{2} \{ w_{tb} + \dfrac{5\pi}{12}(R_{si} + \dfrac{d_{3}}{2}) \}]
+%$
+%\\
+%$
+%+ \, 0.3035 \, + \, 0.876 N [ 5.8 \times 10^{-4} n_{l} \, + 
+%$
+%\\
+%$
+ %\left. \quad \right. \dfrac{\pi}{2} \{ w_{tb} \, + \, \dfrac{5 \pi}{12}(R_{si} \, + \, \dfrac{d_{3}}{2})\}]
+%$
+%\\
+%$
+%\, + \, \pi \left[ \left\{ 31.2( R_{si} + d_{3} + w_{bi}) + 0.0312 \right\} \left\{ L_{sh} - 5.08 \times 10^{-3} \right\} \right]
+%$
+%\\
+%$
+%\, + \, 
+%\begin{cases}
+%\quad 0.7(\frac{5.8 \times 10^{-4} n_{l} + 0.0792}{0.1047})^{1.21},  & \text{for $L_{type} = $ X} \\
+%\quad 0.54 + 0.26( \frac{5.8 \times 10^{-4} n_{l} + 0.0802}{0.1057})^{3.74}, & \text{ for $L_{type} =$ Y} \\
+%\quad 0.58 + 0.32( \frac{5.8 \times 10^{-4} n_{l} + 0.0905}{0.1160})^{4.23}, & \text{ for $L_{type} =$ Z} \\
+%\end{cases}
+%$
+%\\
+%$ \, + \, 9 \, + \, \begin{cases}
+%\quad 1.3(\frac{5.8 \times 10^{-4} n_{l} + 0.0792}{0.1047})^{0.38} (\frac{n_{l}}{44})^{0.18}, & \text{for $L_{type} =$ X} \\
+%\quad 1.6(\frac{5.8 \times 10^{-4} n_{l} + 0.0802}{0.1057})^{0.38} (\frac{n_{l}}{44})^{0.40}, & \text{for $L_{type} =$ Y} \\
+%\quad 1.8(\frac{5.8 \times 10^{-4} n_{l} + 0.0905}{0.1160})^{0.41} (\frac{n_{l}}{44})^{0.52}, & \text{for $L_{type} =$ Z}
+%\end{cases}
+%$
+%\\
+%$
+%\, + \, (1.536 R_{st} - 6.26 \times 10^{-3}) n_{l} \, + \, (2.014 R_{si} \, - \, 8.21 \times 10^{-3}) n_{l}
+%$
+%\\
+%$
+%\, + \, \pi \{29.4(R_{si} - 7.25 \times 10^{-3})^{2} n_{l} \, + \, 1.014 \times 10^{5} R_{sh}^{2} L_{cl}\} 
+%$
+%\\
+%$
+%\, + \, 0.1862 \, + \, 5.31 \times 10^{4} \pi [ R_{st}^{2} L_{st} \, - \,  2 R_{sh}^{2} L_{cl} 
+%$
+%\\
+%$
+ %\left. \quad \right. \, - \, 5.8 \times 10^{-4} n_{l}(R_{si} - 7.25 \times 10^{-3})^{2}] \, + \, 0.01
+%$
+%\\
+%$
+ %\, + \,0.1473 \pi (R_{si} - 7.25 \times 10^{-3}) n_{l} \, + \, \begin{cases}
+%\quad 1.2, & \text{for $T_{p} \le 3.5$} \\
+%\quad 1.6, & \text{for $T_{p} > 3.5$} 
+%\end{cases}
+%$
+%\\
+%$
+%\, + \, \left[ \left\{ 0.5, 0.55, 0.60 \right\} \cong L_{type} = \textbf{\{X, Y, Z\}} \right]
+%$
+%\\
+%$
+%\, + \, \begin{cases}
+%\quad 3.2(\frac{5.8 \times 10^{-4} n_{l} + 0.0792}{0.1047})^{-1.92}(\frac{n_{l}}{44})^{0.92}, & \text{for $L_{type} = $ X} \\ 
+%\quad 3.4(\frac{5.8 \times 10^{-4} n_{l} + 0.0802}{0.1057})^{-1.92}(\frac{n_{l}}{44})^{1.06}, & \text{for $L_{type} = $ Y} \\ 
+%\quad 3.7(\frac{5.8 \times 10^{-4} n_{l} + 0.0905}{0.1160})^{-3.25}(\frac{n_{l}}{44})^{1.60}, & \text{for $L_{type} = $ Z} 
+%\end{cases}
